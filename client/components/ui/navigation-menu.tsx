@@ -1,6 +1,5 @@
 import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu";
 import { ChevronDownIcon } from "lucide-react";
-import { type IconName } from "lucide-react/dynamic";
 import * as React from "react";
 import { useNavigate } from "react-router";
 
@@ -25,7 +24,7 @@ interface MenuItem {
     title: string;
     description?: string;
     href: string;
-    icon?: IconName;
+    icon?: string;
   }[];
 }
 
