@@ -1,4 +1,3 @@
-import type { IconName } from "lucide-react/dynamic";
 import * as React from "react";
 
 import { registerComponent } from "@superblocksteam/library";
@@ -53,7 +52,7 @@ const FileInput = ({
           )}
         >
           <Icon
-            icon={icon as IconName}
+            icon={icon}
             style={{
               width: 16,
               height: 16,

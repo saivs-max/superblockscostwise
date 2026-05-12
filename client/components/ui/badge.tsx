@@ -1,7 +1,6 @@
 /* eslint-disable react-refresh/only-export-components */
 import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
-import type { IconName } from "lucide-react/dynamic";
 import type * as React from "react";
 
 import { registerComponent } from "@superblocksteam/library";
@@ -69,13 +68,13 @@ function BadgeComponent({
 
 // Badge with Icon Support
 type BadgeProps = React.ComponentPropsWithoutRef<typeof BadgeComponent> & {
-  icon?: React.ReactElement | IconName;
+  icon?: React.ReactElement | string;
   onClick?: () => void;
 } & Record<string, unknown>;
 
 const Badge = ({ icon, children, ...props }: BadgeProps) => {
   if (icon && typeof icon === "string") {
-    icon = <IconComponent icon={icon as IconName} />;
+    icon = <IconComponent icon={icon as string} />;
   }
   return (
     <BadgeComponent {...props}>
@@ -94,7 +93,7 @@ const propertiesDefinition: PropertiesPanelDefinition<BadgeProps> = {
       label: "Children",
       description: "The content of the badge",
     }),
-    icon: Prop.any<JSX.Element | IconName>()
+    icon: Prop.any<JSX.Element | string>()
       .propertiesPanel({
         label: "Icon",
         visibility: "SHOW_NAME",
