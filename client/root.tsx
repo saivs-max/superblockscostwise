@@ -1,3 +1,4 @@
+// App entry point
 import "@superblocksteam/library/index.css";
 import "./index.css";
 import { createRoot, type Root } from "react-dom/client";
